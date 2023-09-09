@@ -23,7 +23,7 @@ function checkCard(){
     {
         disableCards();
         count= count +1
-        console.log(count)
+        count == 3 ? shuffle() : 'ainda não'
         return;
     }
     unflipCards();
