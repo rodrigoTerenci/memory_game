@@ -23,6 +23,7 @@ function checkCard(){
     {
         disableCards();
         count= count +1
+        if (count === 3) shuffle()
         return;
     }
     unflipCards();
