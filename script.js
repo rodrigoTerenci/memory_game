@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll('.card');
 let firstFlip, secondFlip,flag=false;
 let locBoard= false;
+let count = 0
 
 function flipCard(){
     if(this===firstFlip) return;
@@ -21,6 +22,7 @@ function checkCard(){
     if(firstFlip.dataset.card === secondFlip.dataset.card)
     {
         disableCards();
+        count= count +1
         return;
     }
     unflipCards();
