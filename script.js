@@ -2,6 +2,21 @@ const cards = document.querySelectorAll('.card');
 let firstFlip, secondFlip,flag=false;
 let locBoard= false;
 let count = 0
+// (function shuffle(){
+//     cards.forEach((card)=>
+//     {
+//         let random= Math.floor(Math.random()*12)
+//         card.style.order= random;
+//     })
+// })();//ImediatlyInvoqueFunction
+function shuffle(){
+    cards.forEach((card)=>
+    {
+        let random= Math.floor(Math.random()*12)
+        card.style.order= random;
+    })
+}
+shuffle()
 
 function flipCard(){
     if(this===firstFlip) return;
@@ -23,7 +38,7 @@ function checkCard(){
     {
         disableCards();
         count= count +1
-        count == 3 ? this.shuffle() : 'ainda não'
+        count == 3 ? shuffle() : console.log('ainda não')
         return;
     }
     unflipCards();
@@ -59,10 +74,4 @@ function resetBoard(){
    [firstFlip, secondFlip]=[undefined, undefined]
 }
 
-(function shuffle(){
-    cards.forEach((card)=>
-    {
-        let random= Math.floor(Math.random()*12)
-        card.style.order= random;
-    })
-})();//ImediatlyInvoqueFunction
+
