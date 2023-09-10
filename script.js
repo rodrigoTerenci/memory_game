@@ -38,7 +38,12 @@ function checkCard(){
     {
         disableCards();
         count= count +1
-        count == 3 ? shuffle() : console.log('ainda não')
+        if (count === 3){
+            cards.forEach((card) => {
+                unflipCards()
+            })
+
+        }
         return;
     }
     unflipCards();
@@ -57,7 +62,7 @@ function disableCards(){
     resetBoard();
 }
 
-function unflipCards(){
+function unflipCards(time=500){
     locBoard=true;
     
     setTimeout(()=>{
@@ -66,7 +71,7 @@ function unflipCards(){
         secondFlip.classList.remove('flip');
         //locBoard=false;
         resetBoard()
-    },1500);
+    },time);
 }
 
 function resetBoard(){
