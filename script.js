@@ -37,13 +37,7 @@ function checkCard(){
     if(firstFlip.dataset.card === secondFlip.dataset.card)
     {
         disableCards();
-        count= count +1
-        if (count === 3){
-            cards.forEach((card) => {
-                unflipCards()
-            })
-
-        }
+        
         return;
     }
     unflipCards();
